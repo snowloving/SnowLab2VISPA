@@ -95,7 +95,7 @@ python main_sdp_cifar.py --model vgg16_1w32a --save vgg16_1w32a_cifar100_sdp --d
 | Architecture | CIFAR-10 | CIFAR-100 | Tiny-ImageNet |
 |-----------|:--------:|:---------:|:-------------:|
 | VGG_Small | 92.74 | ⌛️ | ⌛️ |
-| ResNet18 | 92.85 | ⌛️ | ⌛️ |
+| ResNet18 | 92.85 | 70.15 | ⌛️ |
 
 #### 📋 Quick Example Command
 
