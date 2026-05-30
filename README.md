@@ -36,6 +36,38 @@ Key advantages:
 - **State-of-the-Art Accuracy:** Competitive or superior results compared to STE-based BNNs.
 - **Theoretical Guarantees:** Probabilistic interpretation with formal convergence properties.
 
+## 📂 Repository Structure
+```text
+SnowBench/
+├── README.md                   
+├── requirements.txt            
+├── data.py                     # Dataset loader: CIFAR-10/100, Tiny-ImageNet, ImageNet (with path configuration)
+├── preprocess.py               # Data augmentation & preprocessing pipelines
+├── utils.py                    # Logger, metrics, checkpointing, optimizer adjustment
+│
+├── datasets/
+├── results/
+│
+├── models_sdp/                 # Binary models on cifar and tiny-imagenet
+│   ├── __init__.py.py/         # __all__ = ['vgg_small_1w1a', 'vgg16_1w32a', 'resnet18_1w1a_cifar', 'resnet18_1w32a_cifar']
+│   ├── sdp_wo_entropy.py/      # BinarizeLinear, BinarizeConv2d
+│   ├── sdp_wo_z.py/            # BinarizeLinear, BinarizeConv2d without Z
+│   ├── vgg_small.py/
+│   ├── vgg16.py/        
+│   └── resnet_cifar.py/      
+│
+├── models_imagenet_sdp/        # Binary models on imagenet
+│   ├── __init__.py.py/         # __all__ = ['alexnet_1w1a', 'alexnet_1w32a', 'resnet18_1w1a_recu', 'resnet18_1w32a_recu', 'resnet34_1w1a_recu', 'resnet34_1w32a_recu', 'resnet18_1w32a', 'resnet34_1w32a']
+│   ├── sdp_wo_entropy.py/      # BinarizeLinear, BinarizeConv2d
+│   ├── sdp_wo_z.py/            # BinarizeLinear, BinarizeConv2d without Z
+│   ├── alexnet.py/
+│   ├── birealnet_recu.py/    
+│   └── resnet_1w32a.py/
+│
+├── main_sdp_cifar.py         # Entry: binary (models_sdp)
+├── main_sdp_imagenet.py      # Entry: binary (models_imagenet_sdp)
+└
+```
 ## 🖥️ Experiments
 
 This benchmark supports two main experimental tracks:
