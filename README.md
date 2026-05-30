@@ -80,7 +80,7 @@ We evaluate ProbBop on CIFAR-10, cifar100 and Tiny-ImageNet under two binarizati
 
 | Architecture | CIFAR-10 | CIFAR-100 | Tiny-ImageNet |
 |-----------|:--------:|:---------:|:-------------:|
-| VGG16 | 93.22 | ⌛️ | ⌛️ |
+| VGG16 | 93.22 | 72.69 | - |
 | ResNet18 | 95.15 | 75.81 | ⌛️ |
 > 📝 Notes: All results are from a single run with a fixed random seed (seed_value=2020). No hyperparameter tuning was performed.
 
