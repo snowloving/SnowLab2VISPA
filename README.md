@@ -48,7 +48,7 @@ SnowLab2VISPA/
 ├── datasets/
 ├── results/
 │
-├── models_sdp/                 # Binary models on cifar and tiny-imagenet
+├── models_sdp/                 # Binary models
 │   ├── __init__.py.py/         # __all__ = ['vgg_small_1w1a', 'vgg16_1w32a', 'resnet18_1w1a_cifar', 'resnet18_1w32a_cifar']
 │   ├── sdp_wo_entropy.py/      # BinarizeLinear, BinarizeConv2d
 │   ├── sdp_wo_z.py/            # BinarizeLinear, BinarizeConv2d without Z
@@ -56,7 +56,7 @@ SnowLab2VISPA/
 │   ├── vgg16.py/        
 │   └── resnet_cifar.py/      
 │
-├── models_imagenet_sdp/        # Binary models on imagenet
+├── models_imagenet_sdp/        # Binary models (ImageNet-scale)
 │   ├── __init__.py.py/         # __all__ = ['alexnet_1w1a', 'alexnet_1w32a', 'resnet18_1w1a_recu', 'resnet18_1w32a_recu', 'resnet34_1w1a_recu', 'resnet34_1w32a_recu', 'resnet18_1w32a', 'resnet34_1w32a']
 │   ├── sdp_wo_entropy.py/      # BinarizeLinear, BinarizeConv2d
 │   ├── sdp_wo_z.py/            # BinarizeLinear, BinarizeConv2d without Z
