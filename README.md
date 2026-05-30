@@ -49,7 +49,7 @@ We evaluate ProbBop on CIFAR-10, cifar100 and Tiny-ImageNet under two binarizati
 | Architecture | CIFAR-10 | CIFAR-100 | Tiny-ImageNet |
 |-----------|:--------:|:---------:|:-------------:|
 | VGG16 | 93.22 | ⌛️ | ⌛️ |
-| ResNet18 | 95.15 | ⌛️ | ⌛️ |
+| ResNet18 | 95.15 | 75.81 | ⌛️ |
 
 #### 📋 Quick Example Command
 
