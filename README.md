@@ -48,25 +48,85 @@ We evaluate ProbBop on CIFAR-10, cifar100 and Tiny-ImageNet under two binarizati
 
 | Architecture | CIFAR-10 | CIFAR-100 | Tiny-ImageNet |
 |-----------|:--------:|:---------:|:-------------:|
-| VGG16 | ⌛️ | ⌛️ | ⌛️ |
-| ResNet18 | ⌛️ | ⌛️ | ⌛️ |
+| VGG16 | 93.22 | ⌛️ | ⌛️ |
+| ResNet18 | 95.15 | ⌛️ | ⌛️ |
+
+#### 📋 Quick Example Command
+
+```bash
+python main_sdp_cifar.py \
+  --model resnet18_1w32a_cifar \
+  --save resnet18_1w32a_cifar10_sdp\
+  --dataset cifar10 \
+  --wd 5e-4 \
+  --lr 0.1 \
+  --lr_decay cos \
+  --input_size 32 \
+  --epochs 500 \
+  -K 8 \
+  -L 40 \
+  -scale 100 \
+  --gpus 0
+```
+
+<details> <summary>🔁 All Reproducible Commands with Binarized Weights Only</summary>
+
+---
+
+**CIFAR-10 on VGG16** 
+```bash
+python main_sdp_cifar.py --model vgg16_1w32a --save vgg16_1w32a_cifar10_sdp --dataset cifar10 --wd 5e-4 --lr 0.1 --lr_decay cos --input_size 32 --epochs 500 --K 8 --L 40 --scale 100 --gpus 0
+```
+
+**CIFAR-10 on ResNet18** 
+```bash
+python main_sdp_cifar.py --model resnet18_1w32a_cifar --save resnet18_1w32a_cifar10_sdp --dataset cifar10 --wd 5e-4 --lr 0.1 --lr_decay cos --input_size 32 --epochs 500 --K 8 --L 40 --scale 100 --gpus 0
+```
+
+**CIFAR-100 on VGG16** 
+```bash
+python main_sdp_cifar.py --model vgg16_1w32a --save vgg16_1w32a_cifar100_sdp --dataset cifar100 --wd 5e-4 --lr 0.1 --lr_decay cos --input_size 32 --epochs 500 -K 8 -L 40 -scale 100 --gpus 0
+```
+</details>
+
 
 #### 📊 Full Binarization (Weights + Activations)
 
 | Architecture | CIFAR-10 | CIFAR-100 | Tiny-ImageNet |
 |-----------|:--------:|:---------:|:-------------:|
-| VGG_Small | ⌛️ | ⌛️ | ⌛️ |
-| ResNet18 | ⌛️ | ⌛️ | ⌛️ |
+| VGG_Small | 92.74 | ⌛️ | ⌛️ |
+| ResNet18 | 92.85 | ⌛️ | ⌛️ |
 
-<details> <summary>🔁 All Reproducible Commands on ResNet</summary>
+#### 📋 Quick Example Command
 
----
-
-**CIFAR-10 with SGD** 
 ```bash
-python main_binary_sgdat.py --model resnet_binary --save resnet_binary_cifar10_SGD --dataset cifar10 --bin_regime "{0: {'optimizer': 'SGD','lr':1e-4}}" --binarization det --input_size 32 --epochs 200 -b 256 --gpus 0
+python main_sdp_cifar.py \
+  --model resnet18_1w1a_cifar \
+  --save resnet18_1w1a_cifar10_sdp\
+  --dataset cifar10 \
+  --wd 1e-5 \
+  --lr 0.5 \
+  --lr_decay cos \
+  --input_size 32 \
+  --epochs 600 \
+  --K 4 \
+  --L 40 \
+  --scale 100 \
+  --gpus 0
 ```
 
+<details> <summary>🔁 All Reproducible Commands with both Binarized Weights and Activations</summary>
+
+---
+**CIFAR-10 on VGG_Small** 
+```bash
+python main_sdp_cifar.py --model vgg_small_1w1a --save vgg_small_1w1a_cifar10_sdp --dataset cifar10 --wd 1e-5 --lr 0.5 --lr_decay cos --input_size 32 --epochs 600 --K 4 --L 40 --scale 100 --gpus 0
+```
+
+**CIFAR-10 on ResNet18** 
+```bash
+python main_sdp_cifar.py --model resnet18_1w1a_cifar --save resnet18_1w1a_cifar10_sdp --dataset cifar10 --wd 1e-5 --lr 0.5 --lr_decay cos --input_size 32 --epochs 600 --K 4 --L 40 --scale 100 --gpus 0
+```
 </details>
 
 
