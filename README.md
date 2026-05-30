@@ -64,8 +64,8 @@ SnowLab2VISPA/
 │   ├── birealnet_recu.py/    
 │   └── resnet_1w32a.py/
 │
-├── main_sdp_cifar.py           # Entry: binary (models_sdp)
-├── main_sdp_imagenet.py        # Entry: binary (models_imagenet_sdp)
+├── main_sdp_cifar.py           # Entry: binary models  (models_sdp)
+├── main_sdp_imagenet.py        # Entry: binary models  (models_imagenet_sdp)
 └
 ```
 ## 🖥️ Experiments
